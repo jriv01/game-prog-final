@@ -58,3 +58,11 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Playground folder for testing
+/[Aa]ssets/Playground/*
+
+# VSCode files
+.vscode/
+
+# User settings
+UserSettings/
