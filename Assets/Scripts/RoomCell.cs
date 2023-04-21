@@ -7,10 +7,12 @@ public class RoomCell : MonoBehaviour
     public Behaviour[] behaviorsToEnable;
     public Renderer[] renderersToEnable;
     public bool activated = false;
-    public SpriteRenderer mask;
+    public SpriteRenderer[] masks;
 
     void Start() {
-        mask.enabled = true;
+        foreach(SpriteRenderer mask in masks) {
+            mask.enabled = true;
+        }
         foreach(Behaviour activate in behaviorsToEnable) {
             activate.enabled = false;
         }
@@ -23,7 +25,10 @@ public class RoomCell : MonoBehaviour
 
     public void Activate() {
         activated = true;
-        mask.enabled = false;
+        
+        foreach(SpriteRenderer mask in masks) {
+            mask.enabled = false;
+        }
 
         foreach(Behaviour activate in behaviorsToEnable) {
             activate.enabled = true;
