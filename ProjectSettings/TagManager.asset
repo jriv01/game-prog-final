@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PurchaseButton
+  - Wall
   layers:
   - Default
   - TransparentFX
