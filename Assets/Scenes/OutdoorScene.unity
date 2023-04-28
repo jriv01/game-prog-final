@@ -7927,6 +7927,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2117923873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245171121620531190, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867922536260296505, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+      propertyPath: m_Name
+      value: HealthPickup (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
 --- !u!1 &2118171313
 GameObject:
   m_ObjectHideFlags: 0
