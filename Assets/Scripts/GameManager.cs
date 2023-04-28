@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public int coinCount = 0;
     public int health = 20;
+    private bool grenadeUnlocked = false;
     
     TextMeshProUGUI moneyUI;
 
@@ -103,6 +104,12 @@ public class GameManager : MonoBehaviour
         coinCount -= amount;
         UpdateUI();
     }
+
+    public void UnlockGrenade(bool unlock) {
+        grenadeUnlocked = unlock;
+    }
+
+    public bool getGrenadeStatus() {return grenadeUnlocked;}
 
     // Update is called once per frame
     void Update()

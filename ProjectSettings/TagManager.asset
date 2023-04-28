@@ -13,6 +13,9 @@ TagManager:
   - Wall
   - Undefined
   - Bullet
+  - Grenade
+  - Shotgun
+  - GunHolding
   - healthinterface
   - scoreui
   - EnemyBullet

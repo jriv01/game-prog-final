@@ -7,6 +7,9 @@ public class DummyPlayerController : MonoBehaviour
 {   
     Rigidbody2D _rigidbody;
     public int speed = 10;
+    public int bulletSpeed = 10;
+
+    public Sprite shotgunSprite;
     public PlayerInput playerControls;
     public Sprite[] spriteArray;
     float currTime = 0f;
@@ -14,6 +17,7 @@ public class DummyPlayerController : MonoBehaviour
     public SpriteRenderer playerSprite;
     GameManager _gameManager;
     public AudioClip moneypickup;
+    public AudioClip shotgunPickup;
     AudioSource _audioSource;
 
     int currSprite = 0;
@@ -25,6 +29,7 @@ public class DummyPlayerController : MonoBehaviour
     public Transform shotSpawn;
     public GameObject starterShot;
     public GameObject gunSprite;
+    GameObject gunHolding;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +40,8 @@ public class DummyPlayerController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         gunBody = gun.GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+        gunHolding = GameObject.FindGameObjectWithTag("GunHolding");
+
 
     }
 
@@ -74,9 +81,25 @@ public class DummyPlayerController : MonoBehaviour
             Destroy(col.gameObject);
             //play sound effect
         }
+        if (col.CompareTag("Shotgun")) {
+            _audioSource.PlayOneShot(shotgunPickup);  
+            Destroy(col.gameObject);
+            gunHolding.GetComponent<SpriteRenderer>().sprite = shotgunSprite;
+            // gunHolding.transform.position = new Vector2(-1.642f,2.4f); 
+            gunHolding.transform.localScale = new Vector2(38.1f,41.8f);
+            fireRate = 0.5f;
+            
+            //play sound effect
+        }
         else if (col.CompareTag("EnemyBullet")){
             _gameManager.decrementHealthCounter(1);
         }
+        // if (col.CompareTag("Grenade")) {
+        //     _gameManager.UnlockGrenade();
+        //     _audioSource.PlayOneShot(moneypickup);  
+        //     Destroy(col.gameObject);
+        //     //play sound effect
+        // }
     }
 
     void FixedUpdate(){
