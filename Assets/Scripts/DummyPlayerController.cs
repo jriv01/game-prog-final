@@ -91,6 +91,9 @@ public class DummyPlayerController : MonoBehaviour
             
             //play sound effect
         }
+        else if (col.CompareTag("EnemyBullet")){
+            _gameManager.decrementHealthCounter(1);
+        }
         // if (col.CompareTag("Grenade")) {
         //     _gameManager.UnlockGrenade();
         //     _audioSource.PlayOneShot(moneypickup);  

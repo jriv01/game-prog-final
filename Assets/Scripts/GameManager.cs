@@ -8,12 +8,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int coinCount = 0;
+    public int coinCount = 0;
+    public int health = 20;
     private bool grenadeUnlocked = false;
     
     TextMeshProUGUI moneyUI;
+
+    TextMeshProUGUI healthInterface;
     TextMeshProUGUI costUI;
+    TextMeshProUGUI scoreInterface;
     GameObject purchaseButton;
+
+    public AudioSource _audioSource;
+    public AudioClip hurtPlayer;
+    //public AudioClip healPlayer;
+
+   //public GameObject redDisplay;
 
     private void Awake() {
         // Don't Destroy on Load
@@ -35,7 +45,33 @@ public class GameManager : MonoBehaviour
         costUI.enabled = false;
         
         moneyUI = GameObject.FindGameObjectWithTag("moneyui").GetComponent<TextMeshProUGUI>();
+        healthInterface = GameObject.FindGameObjectWithTag("healthinterface").GetComponent<TextMeshProUGUI>();
+        scoreInterface = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
         UpdateUI();
+    }
+
+    public void incrementEnemyScoreCounter(int value){
+        publicvar.enemyKilled += value;
+        scoreInterface.text = "Score: " + publicvar.enemyKilled;
+    }
+
+    public void decrementHealthCounter(int value){
+        health -= value;
+        AudioSource.PlayClipAtPoint(hurtPlayer, gameObject.transform.position);
+        healthInterface.text = "Health: " + health;
+        UpdateUI();
+
+        //var imageAttribute =  redDisplay.GetComponent<Image>().color;
+        //imageAttribute.a = 0.95f;
+        //redDisplay.GetComponent<Image>().color = imageAttribute;
+    }
+
+    public void incrementHealthCounter(int value){
+        health += value;
+       //AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
+        healthInterface.text = "Health: " + health;
+        UpdateUI();
+
     }
 
     public void SceneChange(Scene current, Scene next) {
@@ -44,7 +80,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void UpdateUI() {
-        moneyUI.text = "COINS: " + coinCount;
+        moneyUI.text = "CASH: " + coinCount;
+        healthInterface.text = "HEALTH: " + health;
     }
 
     public void ResetCoins(){
@@ -55,6 +92,7 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int moneyNum) 
     {
         coinCount += moneyNum;
+        publicvar.cashAmount += moneyNum;
         UpdateUI();
     }
     
@@ -76,6 +114,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    if (health <= 0){
+        SceneManager.LoadScene("GameOver");
+    }
+    // if(redDisplay is not null){
+    //     if(redDisplay.GetComponent<Image>().color.a > 0){
+    //         var imageAttribute =  redDisplay.GetComponent<Image>().color;
+    //         imageAttribute.a = imageAttribute.a - 0.01f;
+    //         redDisplay.GetComponent<Image>().color = imageAttribute;
+    //     }
+    // }
     #if !UNITY_WEBGL
         // Esc to Exit
         if(Input.GetKeyDown(KeyCode.Escape))
