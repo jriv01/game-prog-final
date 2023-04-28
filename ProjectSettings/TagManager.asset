@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Money
+  - PurchaseButton
+  - moneyui
+  - CostUI
+  - ShopUI
+  - eleph
+  - Wall
+  - Undefined
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -40,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: top
+    uniqueID: 1144637297
     locked: 0

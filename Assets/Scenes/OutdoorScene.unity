@@ -6101,6 +6101,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5418000052650159491, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418000052650159491, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144637297
+      objectReference: {fileID: 0}
     - target: {fileID: 5418000052650159516, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
       propertyPath: m_Name
       value: MafiaElephant2
@@ -8193,6 +8201,14 @@ PrefabInstance:
     - target: {fileID: 5418000052650159490, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418000052650159491, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418000052650159491, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144637297
       objectReference: {fileID: 0}
     - target: {fileID: 5418000052650159516, guid: 2a2abe354c051984383ce205c1f78592, type: 3}
       propertyPath: m_Name
