@@ -5786,6 +5786,7 @@ MonoBehaviour:
   health: 20
   _audioSource: {fileID: 0}
   hurtPlayer: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
+  healPlayer: {fileID: 8300000, guid: db61b86c533f3a846900711aa754b9bc, type: 3}
 --- !u!4 &1620604089
 Transform:
   m_ObjectHideFlags: 0
