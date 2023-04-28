@@ -8,7 +8,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D _rigidbody2D;
     GameManager _gameManager;
-
+    
     public int movementSpeed = 5;
 
     public float distance = 10000;
@@ -17,6 +17,9 @@ public class EnemyBehavior : MonoBehaviour
 
     public AudioSource _audioSource;
     public AudioClip hurtSound;
+    public GameObject bullet;
+    public Transform shotSpawn;
+
     Transform user;
     // Animator _animator;
 
@@ -29,8 +32,16 @@ public class EnemyBehavior : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(Follow());
+        StartCoroutine(Shoot());
     }
 
+    IEnumerator Shoot() {
+        while(true) {
+        GameObject bulletInstance = Instantiate(bullet, shotSpawn.position + new Vector3(0,0,0), shotSpawn.rotation);
+        bulletInstance.GetComponent<Rigidbody2D>().AddForce(Vector3.down * 1000);
+        yield return new WaitForSeconds(1);
+        }
+    }
 
     IEnumerator Follow(){
         while(true){
@@ -48,10 +59,10 @@ public class EnemyBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Bullet")) {
             //AudioSource.PlayClipAtPoint(destroyedSound, gameObject.transform.position);
+            AudioSource.PlayClipAtPoint(hurtSound, gameObject.transform.position);
             Instantiate(destructionEffect, transform.position, Quaternion.identity);
             //_gameManager.incrementEnemyScoreCounter(40);
             Destroy(other.gameObject);
-            _audioSource.PlayOneShot(hurtSound);
             Destroy(gameObject);
         }
         
@@ -63,7 +74,7 @@ public class EnemyBehavior : MonoBehaviour
             AudioSource.PlayClipAtPoint(hurtSound, gameObject.transform.position);
             Instantiate(destructionEffect, transform.position, Quaternion.identity);
             //_gameManager.increaseEnemyScore(10);
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Wall")){
             Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());

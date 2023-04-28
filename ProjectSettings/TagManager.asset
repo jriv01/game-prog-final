@@ -8,6 +8,9 @@ TagManager:
   - Wall
   - Money
   - moneyui
+  - CostUI
+  - eleph
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -44,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: top
+    uniqueID: 2194020089
     locked: 0
