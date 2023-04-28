@@ -67,7 +67,7 @@ public class DummyPlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Money")) {
             _gameManager.AddMoney(10);
-            Destroy(gameObject);
+            Destroy(col.gameObject);
             //play sound effect
         }
     }

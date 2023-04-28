@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PurchaseButton
   - Wall
+  - Money
+  - moneyui
   layers:
   - Default
   - TransparentFX
