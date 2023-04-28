@@ -43,7 +43,7 @@ public class EnemyBehavior : MonoBehaviour
                 Vector2 angle_direction = (user.position - bulletInstance.transform.position);
                 bulletInstance.GetComponent<Rigidbody2D>().velocity = angle_direction.normalized * (movementSpeed*2);
             }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         }
     }
 

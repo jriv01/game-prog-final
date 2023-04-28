@@ -95,6 +95,11 @@ public class DummyPlayerController : MonoBehaviour
             _gameManager.decrementHealthCounter(1);
             Destroy(col.gameObject);
         }
+        else if (col.CompareTag("healthpickup")){
+            _gameManager.incrementHealthCounter(1);
+            Destroy(col.gameObject);
+        
+        }
         // if (col.CompareTag("Grenade")) {
         //     _gameManager.UnlockGrenade();
         //     _audioSource.PlayOneShot(moneypickup);  

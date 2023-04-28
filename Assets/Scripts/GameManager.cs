@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public AudioSource _audioSource;
     public AudioClip hurtPlayer;
-    //public AudioClip healPlayer;
+    public AudioClip healPlayer;
 
    //public GameObject redDisplay;
 
@@ -68,7 +68,8 @@ public class GameManager : MonoBehaviour
 
     public void incrementHealthCounter(int value){
         health += value;
-       //AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
+        publicvar.healthAmount += value;
+       AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
         healthInterface.text = "Health: " + health;
         UpdateUI();
 
