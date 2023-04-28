@@ -73,6 +73,7 @@ public class EnemyBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) {
             AudioSource.PlayClipAtPoint(hurtSound, gameObject.transform.position);
             Instantiate(destructionEffect, transform.position, Quaternion.identity);
+            _gameManager.decrementHealthCounter(1);
             //_gameManager.increaseEnemyScore(10);
             // Destroy(gameObject);
         }
