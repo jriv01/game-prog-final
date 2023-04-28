@@ -16,6 +16,9 @@ TagManager:
   - Grenade
   - Shotgun
   - GunHolding
+  - healthinterface
+  - scoreui
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
