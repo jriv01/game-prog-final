@@ -12,6 +12,8 @@ public class DummyPlayerController : MonoBehaviour
     float currTime = 0f;
     float next = 0.5f;
     public SpriteRenderer playerSprite;
+    GameManager _gameManager;
+
     int currSprite = 0;
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class DummyPlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         playerControls = GetComponent<PlayerInput>();
         playerSprite = GetComponent<SpriteRenderer>();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
 
     }
 
@@ -27,6 +30,14 @@ public class DummyPlayerController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("Money")) {
+            _gameManager.AddMoney(10);
+            Destroy(gameObject);
+            //play sound effect
+        }
     }
 
     void FixedUpdate(){
