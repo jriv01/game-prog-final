@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D _rigidbody2D;
     GameManager _gameManager;
+    public string enemyType;
     
     public int movementSpeed = 5;
 
@@ -38,7 +39,10 @@ public class EnemyBehavior : MonoBehaviour
     IEnumerator Shoot() {
         while(true) {
         GameObject bulletInstance = Instantiate(bullet, shotSpawn.position + new Vector3(0,0,0), shotSpawn.rotation);
-        bulletInstance.GetComponent<Rigidbody2D>().AddForce(Vector3.down * 1000);
+        if(Vector2.Distance(bulletInstance.transform.position, user.position) < distance && Vector2.Distance(bulletInstance.transform.position, user.position) > 0){
+                Vector2 angle_direction = (user.position - bulletInstance.transform.position);
+                bulletInstance.GetComponent<Rigidbody2D>().velocity = angle_direction.normalized * (movementSpeed*2);
+            }
         yield return new WaitForSeconds(1);
         }
     }
@@ -47,8 +51,10 @@ public class EnemyBehavior : MonoBehaviour
         while(true){
             yield return new WaitForSeconds(0.1f);
             if(Vector2.Distance(transform.position, user.position) < distance && Vector2.Distance(transform.position, user.position) > 0){
-                if (user.position.x > transform.position.x && transform.localScale.x < 0 || user.position.x < transform.position.x && transform.localScale.x > 0){
-                    transform.localScale *= new Vector2(-1,1);
+                if(enemyType != "elephant") {
+                    if (user.position.x > transform.position.x && transform.localScale.x < 0 || user.position.x < transform.position.x && transform.localScale.x > 0){
+                        transform.localScale *= new Vector2(-1,1);
+                    }
                 }
                 Vector2 angle_direction = (user.position - transform.position);
                 _rigidbody2D.velocity = angle_direction.normalized * movementSpeed;
