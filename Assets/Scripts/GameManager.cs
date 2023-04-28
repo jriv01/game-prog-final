@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     public void incrementHealthCounter(int value){
         health += value;
+        publicvar.healthAmount += value;
        AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
         healthInterface.text = "Health: " + health;
         UpdateUI();
