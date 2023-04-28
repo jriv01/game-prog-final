@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private int coinCount = 0;
+    private bool grenadeUnlocked = false;
     
     TextMeshProUGUI moneyUI;
     TextMeshProUGUI costUI;
@@ -65,6 +66,12 @@ public class GameManager : MonoBehaviour
         coinCount -= amount;
         UpdateUI();
     }
+
+    public void UnlockGrenade(bool unlock) {
+        grenadeUnlocked = unlock;
+    }
+
+    public bool getGrenadeStatus() {return grenadeUnlocked;}
 
     // Update is called once per frame
     void Update()
