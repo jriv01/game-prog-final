@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int moneyNum) 
     {
         coinCount += moneyNum;
+        publicvar.cashAmount += moneyNum;
         UpdateUI();
     }
     
