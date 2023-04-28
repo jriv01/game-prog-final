@@ -50,7 +50,7 @@ public class EnemyBehavior : MonoBehaviour
     IEnumerator Follow(){
         while(true){
             yield return new WaitForSeconds(0.1f);
-            if(Vector2.Distance(transform.position, user.position) < distance && Vector2.Distance(transform.position, user.position) > 0){
+            if(Vector2.Distance(transform.position, user.position) < distance && Vector2.Distance(transform.position, user.position) > 5){
                 if(enemyType != "elephant") {
                     if (user.position.x > transform.position.x && transform.localScale.x < 0 || user.position.x < transform.position.x && transform.localScale.x > 0){
                         transform.localScale *= new Vector2(-1,1);
@@ -67,7 +67,7 @@ public class EnemyBehavior : MonoBehaviour
             //AudioSource.PlayClipAtPoint(destroyedSound, gameObject.transform.position);
             AudioSource.PlayClipAtPoint(hurtSound, gameObject.transform.position);
             Instantiate(destructionEffect, transform.position, Quaternion.identity);
-            //_gameManager.incrementEnemyScoreCounter(40);
+            _gameManager.incrementEnemyScoreCounter(50);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

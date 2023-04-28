@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427241f403842aa428db335802fc14d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: FloorOne
+  firstLevel: OutdoorScene
 --- !u!1 &1300666631
 GameObject:
   m_ObjectHideFlags: 0

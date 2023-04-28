@@ -74,6 +74,9 @@ public class DummyPlayerController : MonoBehaviour
             Destroy(col.gameObject);
             //play sound effect
         }
+        else if (col.CompareTag("EnemyBullet")){
+            _gameManager.decrementHealthCounter(1);
+        }
     }
 
     void FixedUpdate(){

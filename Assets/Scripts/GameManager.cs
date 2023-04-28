@@ -15,10 +15,11 @@ public class GameManager : MonoBehaviour
 
     TextMeshProUGUI healthInterface;
     TextMeshProUGUI costUI;
+    TextMeshProUGUI scoreInterface;
     GameObject purchaseButton;
 
     public AudioSource _audioSource;
-    //public AudioClip hurtPlayer;
+    public AudioClip hurtPlayer;
     //public AudioClip healPlayer;
 
    //public GameObject redDisplay;
@@ -44,12 +45,18 @@ public class GameManager : MonoBehaviour
         
         moneyUI = GameObject.FindGameObjectWithTag("moneyui").GetComponent<TextMeshProUGUI>();
         healthInterface = GameObject.FindGameObjectWithTag("healthinterface").GetComponent<TextMeshProUGUI>();
+        scoreInterface = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
         UpdateUI();
+    }
+
+    public void incrementEnemyScoreCounter(int value){
+        publicvar.enemyKilled += value;
+        scoreInterface.text = "Score: " + publicvar.enemyKilled;
     }
 
     public void decrementHealthCounter(int value){
         health -= value;
-        //AudioSource.PlayClipAtPoint(hurtPlayer, gameObject.transform.position);
+        AudioSource.PlayClipAtPoint(hurtPlayer, gameObject.transform.position);
         healthInterface.text = "Health: " + health;
         UpdateUI();
 
