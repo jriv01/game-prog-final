@@ -12,6 +12,8 @@ public class DummyPlayerController : MonoBehaviour
     float currTime = 0f;
     float next = 0.5f;
     public SpriteRenderer playerSprite;
+    GameManager _gameManager;
+
     int currSprite = 0;
     public GameObject gun;
     Rigidbody2D gunBody;
@@ -29,6 +31,7 @@ public class DummyPlayerController : MonoBehaviour
         playerControls = GetComponent<PlayerInput>();
         playerSprite = GetComponent<SpriteRenderer>();
         gunBody = gun.GetComponent<Rigidbody2D>();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
 
     }
 
@@ -59,6 +62,14 @@ public class DummyPlayerController : MonoBehaviour
 
         else
             gunBody.rotation = 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("Money")) {
+            _gameManager.AddMoney(10);
+            Destroy(gameObject);
+            //play sound effect
+        }
     }
 
     void FixedUpdate(){
