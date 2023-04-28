@@ -6,5 +6,6 @@ using UnityEngine.SceneManagement;
 public static class publicvar
 {
     public static int cashAmount = 0;
+    public static int healthAmount = 0;
     public static int enemyKilled = 0;
 }

@@ -10,7 +10,7 @@ public class GameOverTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        finalCash.text = "Total Cash Collected: " + publicvar.cashAmount;
+        finalCash.text = "Total Cash Collected: " + publicvar.cashAmount + "\n\n" + "Total Health Collected: " + publicvar.healthAmount + "\n\n" + "Final Score: "+ publicvar.enemyKilled;
     }
 
     
