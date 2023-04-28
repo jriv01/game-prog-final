@@ -93,6 +93,7 @@ public class DummyPlayerController : MonoBehaviour
         }
         else if (col.CompareTag("EnemyBullet")){
             _gameManager.decrementHealthCounter(1);
+            Destroy(col.gameObject);
         }
         // if (col.CompareTag("Grenade")) {
         //     _gameManager.UnlockGrenade();
