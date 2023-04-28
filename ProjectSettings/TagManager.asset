@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Money
   - moneyui
+  - CostUI
+  - ShopUI
   layers:
   - Default
   - TransparentFX
