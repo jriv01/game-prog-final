@@ -13,6 +13,8 @@ public class DummyPlayerController : MonoBehaviour
     float next = 0.5f;
     public SpriteRenderer playerSprite;
     GameManager _gameManager;
+    public AudioClip moneypickup;
+    AudioSource _audioSource;
 
     int currSprite = 0;
     public GameObject gun;
@@ -30,6 +32,7 @@ public class DummyPlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         playerControls = GetComponent<PlayerInput>();
         playerSprite = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
         gunBody = gun.GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
 
@@ -67,6 +70,7 @@ public class DummyPlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Money")) {
             _gameManager.AddMoney(10);
+            _audioSource.PlayOneShot(moneypickup);  
             Destroy(col.gameObject);
             //play sound effect
         }

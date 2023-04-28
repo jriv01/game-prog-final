@@ -3233,6 +3233,14 @@ MonoBehaviour:
   - {fileID: -1529791063, guid: 2a20968a8ca90ea41ae177d5cd7b6be9, type: 3}
   - {fileID: 1600498822, guid: 2a20968a8ca90ea41ae177d5cd7b6be9, type: 3}
   playerSprite: {fileID: 0}
+  moneypickup: {fileID: 8300000, guid: b0d16b798b97f4a4da6da739d6e82c58, type: 3}
+  gun: {fileID: 0}
+  bullet: {fileID: 0}
+  nextFire: 0
+  fireRate: 0
+  shotSpawn: {fileID: 0}
+  starterShot: {fileID: 0}
+  gunSprite: {fileID: 0}
 --- !u!50 &709692104
 Rigidbody2D:
   serializedVersion: 4
@@ -6677,6 +6685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2022a2883d8614e89ca74ba5f9e1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinUI: {fileID: 0}
 --- !u!4 &1356316555
 Transform:
   m_ObjectHideFlags: 0
