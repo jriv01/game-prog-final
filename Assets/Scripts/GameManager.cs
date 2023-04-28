@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
         purchaseButton = GameObject.FindGameObjectWithTag("PurchaseButton");
         costUI = GameObject.FindGameObjectWithTag("CostUI").GetComponent<TextMeshProUGUI>();
+        GameObject.FindGameObjectWithTag("ShopUI").SetActive(false);
         purchaseButton.SetActive(false);
         costUI.enabled = false;
         
