@@ -4,26 +4,44 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    GameObject player;
-    public int speed = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(ChasePlayer());
-    }
-    IEnumerator ChasePlayer(){
-        while (true) {
-            print("wah");
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
-            yield return new WaitForSeconds(0.1f);
-            }
+    public int hp = 3;
+    
+    public AudioClip deathSound;
+    public AudioClip damageSound;
+    GameObject deathEffectPrefab;
+    AudioSource _audioSource;
+
+    void Start() {
+        _audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void TakeDamage(int damage) {
+        // Lose hp & check if the enemy died
+        hp -= damage;
+        if(hp <= 0) {
+            StartCoroutine(Die());
+        } else {
+            _audioSource.PlayOneShot(damageSound);
+            StartCoroutine(FlashRed());
+        }
+    }
+
+    IEnumerator FlashRed() {
+        // Flash sprite red for half a second
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.color = new Color32(255, 0, 0, 255);
+        yield return new WaitForSeconds(0.5f);
+        renderer.color = new Color32(255, 255, 255, 255);
+    }
+
+    IEnumerator Die() {
+        // Disable components
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        // Play death components
+        Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        _audioSource.PlayOneShot(deathSound);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class RoomCell : MonoBehaviour
 {
-    public Behaviour[] behaviorsToEnable;
+    public MonoBehaviour[] behaviorsToEnable;
     public Renderer[] renderersToEnable;
     public bool activated = false;
     public SpriteRenderer[] masks;
 
-    void Start() {
+    void Awake() {
         foreach(SpriteRenderer mask in masks) {
             mask.enabled = true;
         }
-        foreach(Behaviour activate in behaviorsToEnable) {
+        foreach(MonoBehaviour activate in behaviorsToEnable) {
             activate.enabled = false;
         }
         foreach(Renderer activate in renderersToEnable) {
@@ -24,17 +24,17 @@ public class RoomCell : MonoBehaviour
     }
 
     public void Activate() {
+        if(!activated) {
+            foreach(SpriteRenderer mask in masks) {
+                mask.enabled = false;
+            }
+            foreach(Behaviour activate in behaviorsToEnable) {
+                activate.enabled = true;
+            }
+            foreach(Renderer activate in renderersToEnable) {
+                activate.enabled = true;
+            }
+        }
         activated = true;
-        
-        foreach(SpriteRenderer mask in masks) {
-            mask.enabled = false;
-        }
-
-        foreach(Behaviour activate in behaviorsToEnable) {
-            activate.enabled = true;
-        }
-        foreach(Renderer activate in renderersToEnable) {
-            activate.enabled = true;
-        }
     }
 }

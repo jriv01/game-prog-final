@@ -9,21 +9,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int coinCount = 0;
+    public int totalCoinsCollected = 0;
     public int health = 20;
+    public int score = 0;
     private bool grenadeUnlocked = false;
     
     TextMeshProUGUI moneyUI;
 
-    TextMeshProUGUI healthInterface;
+    TextMeshProUGUI healthUI;
     TextMeshProUGUI costUI;
-    TextMeshProUGUI scoreInterface;
+    TextMeshProUGUI scoreUI;
     GameObject purchaseButton;
+    Player player;
 
     public AudioSource _audioSource;
     public AudioClip hurtPlayer;
     public AudioClip healPlayer;
-
-   //public GameObject redDisplay;
 
     private void Awake() {
         // Don't Destroy on Load
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         SceneManager.activeSceneChanged += SceneChange;
@@ -45,55 +46,63 @@ public class GameManager : MonoBehaviour
         costUI.enabled = false;
         
         moneyUI = GameObject.FindGameObjectWithTag("moneyui").GetComponent<TextMeshProUGUI>();
-        healthInterface = GameObject.FindGameObjectWithTag("healthinterface").GetComponent<TextMeshProUGUI>();
-        scoreInterface = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
+        healthUI = GameObject.FindGameObjectWithTag("healthinterface").GetComponent<TextMeshProUGUI>();
+        scoreUI = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
         UpdateUI();
     }
 
     public void incrementEnemyScoreCounter(int value){
-        publicvar.enemyKilled += value;
-        scoreInterface.text = "Score: " + publicvar.enemyKilled;
+        score += value;
+        scoreUI.text = "Score: " + score;
     }
 
     public void decrementHealthCounter(int value){
         health -= value;
         AudioSource.PlayClipAtPoint(hurtPlayer, gameObject.transform.position);
-        healthInterface.text = "Health: " + health;
+        healthUI.text = "Health: " + health;
         UpdateUI();
-
-        //var imageAttribute =  redDisplay.GetComponent<Image>().color;
-        //imageAttribute.a = 0.95f;
-        //redDisplay.GetComponent<Image>().color = imageAttribute;
     }
 
     public void incrementHealthCounter(int value){
         health += value;
-        publicvar.healthAmount += value;
-       AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
-        healthInterface.text = "Health: " + health;
+        AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
+        healthUI.text = "Health: " + health;
         UpdateUI();
 
     }
 
+    public void TakeDamage(int value) {
+        health -= value;
+        _audioSource.PlayOneShot(hurtPlayer);
+        UpdateUI();
+    }
+
     public void SceneChange(Scene current, Scene next) {
         moneyUI = GameObject.FindGameObjectWithTag("moneyui").GetComponent<TextMeshProUGUI>();
+        healthUI = GameObject.FindGameObjectWithTag("healthinterface").GetComponent<TextMeshProUGUI>();
+        purchaseButton = GameObject.FindGameObjectWithTag("PurchaseButton");
+        costUI = GameObject.FindGameObjectWithTag("CostUI").GetComponent<TextMeshProUGUI>();
+        GameObject.FindGameObjectWithTag("ShopUI").SetActive(false);
+        purchaseButton.SetActive(false);
+        costUI.enabled = false;
         UpdateUI();
     }
 
     public void UpdateUI() {
         moneyUI.text = "CASH: " + coinCount;
-        healthInterface.text = "HEALTH: " + health;
+        healthUI.text = "HEALTH: " + health;
     }
 
     public void ResetCoins(){
         coinCount = 0;  
+        totalCoinsCollected = 0;
         UpdateUI();
     }
 
     public void AddMoney(int moneyNum) 
     {
         coinCount += moneyNum;
-        publicvar.cashAmount += moneyNum;
+        totalCoinsCollected += moneyNum;
         UpdateUI();
     }
     
@@ -115,16 +124,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    if (health <= 0){
-        SceneManager.LoadScene("GameOver");
-    }
-    // if(redDisplay is not null){
-    //     if(redDisplay.GetComponent<Image>().color.a > 0){
-    //         var imageAttribute =  redDisplay.GetComponent<Image>().color;
-    //         imageAttribute.a = imageAttribute.a - 0.01f;
-    //         redDisplay.GetComponent<Image>().color = imageAttribute;
-    //     }
-    // }
+        if (health <= 0){
+            SceneManager.LoadScene("GameOver");
+        }
+
     #if !UNITY_WEBGL
         // Esc to Exit
         if(Input.GetKeyDown(KeyCode.Escape))

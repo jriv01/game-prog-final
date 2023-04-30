@@ -20,6 +20,7 @@ TagManager:
   - scoreui
   - EnemyBullet
   - healthpickup
+  - Enemy
   layers:
   - Default
   - TransparentFX
