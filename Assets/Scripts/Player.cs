@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     public Weapon[] weapons;
     SpriteRenderer playerSprite;
     GameManager _gameManager;
-    public AudioClip moneypickup;
-    public AudioClip shotgunPickup;
     public AudioSource _audioSource;
 
     float nextFire = 0;
