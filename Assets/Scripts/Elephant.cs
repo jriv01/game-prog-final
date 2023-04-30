@@ -48,7 +48,7 @@ public class Elephant : MonoBehaviour
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if elephant can see player
             if(distance < lookDistance){
-                // Move towards the player
+                // Shoot at player
                 GameObject bulletInstance = Instantiate(bullet, gunPosition.position, gunPosition.rotation);   
                 Vector2 angle_direction = (player.position - bulletInstance.transform.position);
                 bulletInstance.GetComponent<Rigidbody2D>().AddForce(angle_direction.normalized * (bulletSpeed));
@@ -63,6 +63,7 @@ public class Elephant : MonoBehaviour
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if within shooting distance
             if(distance < lookDistance && distance > shootDistance){
+                // Move towards the player
                 _renderer.flipX = faceLeft;
                 Vector2 angle_direction = (player.position - transform.position);
                 _rigidbody2D.velocity = angle_direction.normalized * movementSpeed;
