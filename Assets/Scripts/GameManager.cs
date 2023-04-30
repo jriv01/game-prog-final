@@ -51,24 +51,10 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void incrementEnemyScoreCounter(int value){
-        score += value;
-        scoreUI.text = "Score: " + score;
-    }
-
-    public void decrementHealthCounter(int value){
-        health -= value;
-        AudioSource.PlayClipAtPoint(hurtPlayer, gameObject.transform.position);
-        healthUI.text = "Health: " + health;
-        UpdateUI();
-    }
-
-    public void incrementHealthCounter(int value){
+    public void Heal(int value) {
         health += value;
-        AudioSource.PlayClipAtPoint(healPlayer, gameObject.transform.position);
-        healthUI.text = "Health: " + health;
-        UpdateUI();
-
+        _audioSource.PlayOneShot(healPlayer);
+        UpdateUI();    
     }
 
     public void TakeDamage(int value) {

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     
     public AudioClip deathSound;
     public AudioClip damageSound;
-    GameObject deathEffectPrefab;
+    public GameObject deathEffectPrefab;
     AudioSource _audioSource;
 
     void Start() {
@@ -38,6 +38,12 @@ public class Enemy : MonoBehaviour
         // Disable components
         GetComponent<Collider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+
+        // Disable all children
+        foreach(Transform child in transform) {
+            child.gameObject.SetActive(false);
+        }
+
         // Play death components
         Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
         _audioSource.PlayOneShot(deathSound);

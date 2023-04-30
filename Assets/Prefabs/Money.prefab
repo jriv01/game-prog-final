@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5756640002272353730}
   - component: {fileID: 5756640002272353741}
   - component: {fileID: 4024444642248602310}
+  - component: {fileID: 6536197481509345905}
   m_Layer: 0
   m_Name: Money
   m_TagString: Money
@@ -130,3 +131,17 @@ PolygonCollider2D:
       - {x: -0.7541419, y: 4.612953}
       - {x: -1.1220026, y: 4.004833}
       - {x: -2.578207, y: 4.030851}
+--- !u!114 &6536197481509345905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756640002272353731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97b28788d11b5043bcdd316042cd9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 20
+  pickupSound: {fileID: 8300000, guid: b0d16b798b97f4a4da6da739d6e82c58, type: 3}
