@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fda91087259c83f48915716e4990dd67
+guid: 1dc1ce574eac0aa4cbf9d864c8ea8a8f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 19}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -125,29 +125,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shotgun_0
+      name: ElephantPiskel_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 29
-        height: 13
+        x: 268
+        y: 1116
+        width: 488
+        height: 728
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +143,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86eea029b4934be44ad7b050b805e199
-      internalID: -1423683796
+      spriteID: f1086f36d2f55ce409f31c760f9d099c
+      internalID: -1849950258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElephantPiskel_1
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 1112
+        width: 488
+        height: 732
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0d27ebbdcf536439414b557f9947b8
+      internalID: -919250434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElephantPiskel_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 88
+        width: 488
+        height: 732
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e361ff2a6760fc24e99b5a19ffe634d7
+      internalID: 450415561
       vertices: []
       indices: 
       edges: []
@@ -165,14 +195,16 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Shotgun_0: -1423683796
+      ElephantPiskel_2: 450415561
+      ElephantPiskel_0: -1849950258
+      ElephantPiskel_1: -919250434
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
