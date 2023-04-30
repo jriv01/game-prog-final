@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 2534452994937408992}
   m_Layer: 0
   m_Name: ElephantEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   hp: 3
   deathSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
   damageSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
+  deathEffectPrefab: {fileID: 1622559734526033383, guid: 130b1026c0fc81641b6da64898f9182f, type: 3}
 --- !u!60 &935841656423879145
 PolygonCollider2D:
   m_ObjectHideFlags: 0
