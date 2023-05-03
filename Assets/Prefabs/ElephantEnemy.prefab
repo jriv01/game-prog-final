@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935841655650717576}
   - component: {fileID: 935841655650717577}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 935841656423879151}
   - component: {fileID: 935841656423879150}
   - component: {fileID: 2534452994937408992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ElephantEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 935841657488300853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
