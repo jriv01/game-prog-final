@@ -77,8 +77,6 @@ public class Elephant : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         // Damage player if collided
         if (other.gameObject.CompareTag("Player")) {
-            _audioSource.PlayOneShot(hurtSound);
-            Instantiate(destructionEffect, transform.position, Quaternion.identity);
             _gameManager.TakeDamage(1);
         }
     }
