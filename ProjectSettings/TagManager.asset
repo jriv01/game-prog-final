@@ -20,11 +20,12 @@ TagManager:
   - scoreui
   - EnemyBullet
   - healthpickup
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 

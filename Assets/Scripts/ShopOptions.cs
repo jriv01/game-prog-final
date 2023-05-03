@@ -29,6 +29,7 @@ public class ShopOptions : MonoBehaviour
             _gameManager.TakeMoney(ammoCost);
             ShopUI.SetActive(false);
             print("INCREASE AMMO");
+            ShopUI.SetActive(false);
         }
     }
 }
