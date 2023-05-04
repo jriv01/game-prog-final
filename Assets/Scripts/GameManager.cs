@@ -98,6 +98,9 @@ public class GameManager : MonoBehaviour
 
     public void TakeMoney(int amount) {
         coinCount -= amount;
+
+        if(coinCount < 0) coinCount = 0;
+
         UpdateUI();
     }
 
