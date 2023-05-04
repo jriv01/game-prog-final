@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int totalCoinsCollected = 0;
     public int health = 20;
     public int score = 0;
+    public int ammoCount;
     private bool grenadeUnlocked = false;
     
     TextMeshProUGUI moneyUI;
@@ -50,7 +51,10 @@ public class GameManager : MonoBehaviour
         scoreUI = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
         UpdateUI();
     }
+    public void addAmmo(int value)
+    {
 
+    }
     public void Heal(int value) {
         health += value;
         _audioSource.PlayOneShot(healPlayer);

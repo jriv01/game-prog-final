@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     SpriteRenderer playerSprite;
     GameManager _gameManager;
     public AudioSource _audioSource;
-
+    public List<string> foundWeapons = new List<string>();
     float nextFire = 0;
     
     bool faceLeft = false;
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foundWeapons.Add("Handgun");
         _rigidbody = GetComponent<Rigidbody2D>();
         playerControls = GetComponent<PlayerInput>();
         playerSprite = GetComponent<SpriteRenderer>();
@@ -68,7 +69,6 @@ public class Player : MonoBehaviour
             currentWeapon.weaponBody.SetActive(false);
         }
     }
-
     void FireGun(Transform weaponPosition, float angle) {
         GameObject bulClone = Instantiate(currentWeapon.bulletPrefab, currentWeapon.bulletSpawn.position, weaponPosition.rotation);
         bulClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * currentWeapon.bulletSpeed);
@@ -94,6 +94,18 @@ public class Player : MonoBehaviour
             }
         }
         PublicVars.currentWeapon = weaponName;
+    }
+    public void changeWeapon()
+    {
+        for(int i = 0; i<foundWeapons.Count-1; i++)
+        {
+            if (foundWeapons[i] == currentWeapon.weaponName)
+            {
+                SetWeapon(foundWeapons[i + 1]);
+                return;
+            }
+        }
+        SetWeapon(foundWeapons[0]);
     }
 
     void FixedUpdate(){

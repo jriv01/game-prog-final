@@ -13,6 +13,7 @@ public class WeaponPickup : MonoBehaviour
             _player.SetWeapon(weaponName);
             _player._audioSource.PlayOneShot(pickupSound);
             Destroy(gameObject);
+            _player.foundWeapons.Add(weaponName);
         }
     }
 }

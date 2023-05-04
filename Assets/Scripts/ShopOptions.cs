@@ -19,17 +19,26 @@ public class ShopOptions : MonoBehaviour
     public void BuyHP() {
         if(_gameManager.CanAfford(hpCost)) {
             _gameManager.TakeMoney(hpCost);
-            print("INCREASE HP");
-            ShopUI.SetActive(false);
+            // print("INCREASE HP");
+            //ShopUI.SetActive(false);
+            _gameManager.Heal(10);
+        }
+        else
+        {
+
         }
     }
 
     public void BuyAmmo() {
         if(_gameManager.CanAfford(ammoCost)) {
             _gameManager.TakeMoney(ammoCost);
-            ShopUI.SetActive(false);
-            print("INCREASE AMMO");
-            ShopUI.SetActive(false);
+            // ShopUI.SetActive(false);
+            // print("INCREASE AMMO");
+
+        }
+        else
+        {
+            
         }
     }
 }
