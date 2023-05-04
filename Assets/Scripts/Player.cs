@@ -61,15 +61,15 @@ public class Player : MonoBehaviour
             if(Time.time > nextFire)
             {
                 nextFire = Time.time + currentWeapon.fireRate;
-                if(currentWeapon.weaponName == "Handgun") FireHandgun(weaponPos, angle);
-                else if(currentWeapon.weaponName == "Shotgun") FireShotgun(weaponPos, angle);
+                if(currentWeapon.weaponName == "Shotgun") FireShotgun(weaponPos, angle);
+                else FireGun(weaponPos, angle);
             }
         } else {
             currentWeapon.weaponBody.SetActive(false);
         }
     }
 
-    void FireHandgun(Transform weaponPosition, float angle) {
+    void FireGun(Transform weaponPosition, float angle) {
         GameObject bulClone = Instantiate(currentWeapon.bulletPrefab, currentWeapon.bulletSpawn.position, weaponPosition.rotation);
         bulClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * currentWeapon.bulletSpeed);
     }
