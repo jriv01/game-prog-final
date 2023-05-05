@@ -12,13 +12,14 @@ public class GameManager : MonoBehaviour
     public int totalCoinsCollected = 0;
     public int health = 20;
     public int score = 0;
-    public int ammoCount;
+    public int ammoCount = 20;
     private bool grenadeUnlocked = false;
     
     TextMeshProUGUI moneyUI;
 
     TextMeshProUGUI healthUI;
     TextMeshProUGUI costUI;
+    TextMeshProUGUI ammoUI;
     TextMeshProUGUI scoreUI;
     GameObject purchaseButton;
     Player player;
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         purchaseButton = GameObject.FindGameObjectWithTag("PurchaseButton");
         costUI = GameObject.FindGameObjectWithTag("CostUI").GetComponent<TextMeshProUGUI>();
+        ammoUI = GameObject.FindGameObjectWithTag("ammoUI").GetComponent<TextMeshProUGUI>();
+
         GameObject.FindGameObjectWithTag("ShopUI").SetActive(false);
         purchaseButton.SetActive(false);
         costUI.enabled = false;
@@ -53,7 +56,8 @@ public class GameManager : MonoBehaviour
     }
     public void addAmmo(int value)
     {
-
+        ammoCount += value;
+        UpdateUI();
     }
     public void Heal(int value) {
         health += value;
@@ -81,6 +85,7 @@ public class GameManager : MonoBehaviour
     public void UpdateUI() {
         moneyUI.text = "CASH: " + coinCount;
         healthUI.text = "HEALTH: " + health;
+        ammoUI.text = "Ammo: " + ammoCount;
     }
 
     public void ResetCoins(){

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356496320523730994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: -1}
   m_LocalScale: {x: 0.50502, y: 0.50502, z: 0.50502}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -282,7 +282,7 @@ MonoBehaviour:
     weaponBody: {fileID: 356496320523730994}
     bulletSpawn: {fileID: 2108890809370072346}
     bulletPrefab: {fileID: 1222947256720486, guid: 76251d086a824f34bbf3c3257cc9254e, type: 3}
-    fireRate: 0.75
+    fireRate: 1
     bulletSpeed: 1000
     distanceFromPlayer: 1
   - weaponName: Shotgun
@@ -300,6 +300,7 @@ MonoBehaviour:
     bulletSpeed: 1000
     distanceFromPlayer: 1.25
   _audioSource: {fileID: 1775717014797023584}
+  foundWeapons: []
 --- !u!50 &1775717014797023519
 Rigidbody2D:
   serializedVersion: 4
@@ -313,7 +314,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -371,7 +372,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.687783
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

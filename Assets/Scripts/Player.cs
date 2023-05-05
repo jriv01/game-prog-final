@@ -59,8 +59,12 @@ public class Player : MonoBehaviour
         if (gunRot[0] != 0 || gunRot[1] != 0)
         {
             currentWeapon.weaponBody.SetActive(true);
-            if(Time.time > nextFire)
+            if(_gameManager.ammoCount > 0 && Time.time > nextFire)
             {
+                if (currentWeapon.weaponName.Equals("Shotgun"))
+                    _gameManager.addAmmo(-3);
+                else
+                    _gameManager.addAmmo(-1);
                 nextFire = Time.time + currentWeapon.fireRate;
                 if(currentWeapon.weaponName == "Shotgun") FireShotgun(weaponPos, angle);
                 else FireGun(weaponPos, angle);
