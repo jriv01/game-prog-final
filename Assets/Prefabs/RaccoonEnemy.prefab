@@ -107,6 +107,7 @@ MonoBehaviour:
   stealRate: 0.75
   stealMinimum: 3
   stealMaximum: 7
+  lookDistance: 9.3
   stealPrefab: {fileID: 6900427471374169051, guid: a557f0f50f93b134e874429add711abe, type: 3}
 --- !u!114 &7562943977378111349
 MonoBehaviour:
@@ -121,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  deathSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
-  damageSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
+  deathSound: {fileID: 8300000, guid: 668389f2b747af347a25809092d246a4, type: 3}
+  damageSound: {fileID: 8300000, guid: 872d0fcd953cdbc4ba40acf75d5e78fe, type: 3}
   deathEffectPrefab: {fileID: 1465245868858389580, guid: 0d81da2656adf1a4f99ad2c657592b32, type: 3}
   moneyPrefab: {fileID: 5756640002272353731, guid: 953373c512dbea0498e03008a4726a75, type: 3}
 --- !u!60 &7562943977378111348

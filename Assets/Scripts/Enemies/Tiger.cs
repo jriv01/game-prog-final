@@ -19,6 +19,8 @@ public class Tiger : MonoBehaviour
     Transform player;
     AudioSource _audioSource;
 
+    public AudioClip slashSound;
+
     SpriteRenderer _renderer;
     Animator _animator;
     NavMeshAgent agent;
@@ -68,7 +70,7 @@ public class Tiger : MonoBehaviour
             if(distance <= attackDistance) {
                 print("nice");
                 _gameManager.TakeDamage(attackDamage);
-                
+                _audioSource.PlayOneShot(slashSound);
                 // Play slashing effect
                 // Set position of effect
                 Vector3 slashPosition = new Vector3(
