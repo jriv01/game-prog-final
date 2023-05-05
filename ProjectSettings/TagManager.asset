@@ -24,6 +24,7 @@ TagManager:
   - ammoUI
   - Boss
   - speedpickup
+  - Music
   layers:
   - Default
   - TransparentFX

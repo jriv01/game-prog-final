@@ -3503,6 +3503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1775717014797023584, guid: e5773f59b280c2b479a7bfe9e077e78a, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 1775717014797023586, guid: e5773f59b280c2b479a7bfe9e077e78a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4530,6 +4534,7 @@ MonoBehaviour:
   coinCount: 0
   totalCoinsCollected: 0
   health: 20
+  initialhealth: 20
   score: 0
   ammoCount: 20
   _audioSource: {fileID: 934390192}
@@ -4562,7 +4567,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8431,6 +8436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7254259586327324175, guid: 2a45e4115eebbc143a8ca6b7176b37e1, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 7562943977378111345, guid: 2a45e4115eebbc143a8ca6b7176b37e1, type: 3}
       propertyPath: m_Name
       value: RaccoonEnemy
