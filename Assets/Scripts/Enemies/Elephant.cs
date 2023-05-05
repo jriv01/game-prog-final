@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Elephant : MonoBehaviour
 {
@@ -29,6 +30,13 @@ public class Elephant : MonoBehaviour
 
     SpriteRenderer _renderer;
     Animator _animator;
+    NavMeshAgent agent;
+
+    void OnEnable() {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
 
     void Start() {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -39,6 +47,7 @@ public class Elephant : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
 
+
         StartCoroutine(Follow());
         StartCoroutine(Shoot());
     }
@@ -47,7 +56,7 @@ public class Elephant : MonoBehaviour
         while(true) {
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if elephant can see player
-            if(distance < lookDistance){
+            if(distance <= shootDistance){
                 // Shoot at player
                 GameObject bulletInstance = Instantiate(bullet, gunPosition.position, gunPosition.rotation);   
                 Vector2 angle_direction = (player.position - bulletInstance.transform.position);
@@ -65,11 +74,10 @@ public class Elephant : MonoBehaviour
             if(distance < lookDistance && distance > shootDistance){
                 // Move towards the player
                 _renderer.flipX = faceLeft;
-                Vector2 angle_direction = (player.position - transform.position);
-                _rigidbody2D.velocity = angle_direction.normalized * movementSpeed;
+                agent.SetDestination(player.position);
             }
             else {
-                _rigidbody2D.velocity = new Vector2(0, 0);
+                agent.SetDestination(transform.position);
             }
         }
     }
