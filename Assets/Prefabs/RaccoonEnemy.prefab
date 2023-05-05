@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7562943977378111348}
   - component: {fileID: 7562943977378111347}
   - component: {fileID: 7562943977378111346}
+  - component: {fileID: 9129130459715003478}
   m_Layer: 3
   m_Name: RaccoonEnemy
   m_TagString: Enemy
@@ -98,14 +99,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7562943977378111345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24a7a2a735c9b24885f516b96a24536, type: 3}
+  m_Script: {fileID: 11500000, guid: dbdf414a3fb53b24e98091112ac0bc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
-  stealDistance: 1.5
-  stealRate: 1
-  stealMinimum: 1
-  stealMaximum: 3
+  movementSpeed: 5
+  stealDistance: 1
+  stealRate: 0.75
+  stealMinimum: 3
+  stealMaximum: 7
   stealPrefab: {fileID: 6900427471374169051, guid: a557f0f50f93b134e874429add711abe, type: 3}
 --- !u!114 &7562943977378111349
 MonoBehaviour:
@@ -123,6 +124,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
   damageSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
   deathEffectPrefab: {fileID: 1465245868858389580, guid: 0d81da2656adf1a4f99ad2c657592b32, type: 3}
+  moneyPrefab: {fileID: 5756640002272353731, guid: 953373c512dbea0498e03008a4726a75, type: 3}
 --- !u!60 &7562943977378111348
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -223,3 +225,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!195 &9129130459715003478
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562943977378111345}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.365
+  m_Speed: 4
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8.12
+  m_BaseOffset: 4.06
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

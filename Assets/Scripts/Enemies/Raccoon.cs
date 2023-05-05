@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Raccoon : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class Raccoon : MonoBehaviour
 
     SpriteRenderer _renderer;
     Animator _animator;
+    NavMeshAgent agent;
+
+    void OnEnable() {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
 
     void Start() {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -45,11 +53,10 @@ public class Raccoon : MonoBehaviour
             if(distance < lookDistance) {
                 // Move towards the player
                 _renderer.flipX = faceLeft;
-                Vector2 angle_direction = (player.position - transform.position);
-                _rigidbody2D.velocity = angle_direction.normalized * movementSpeed;
+                agent.SetDestination(player.position);
             }
             else {
-                _rigidbody2D.velocity = new Vector2(0, 0);
+                agent.SetDestination(transform.position);
             }
         }
     }
