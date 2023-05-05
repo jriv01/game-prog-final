@@ -6,9 +6,10 @@ public class Tiger : MonoBehaviour
 {
     
     public int movementSpeed = 5;
-    public float attackDistance = 1f;
+    public float attackDistance = 3f;
     public float attackRate = 0.5f;
     public int attackDamage = 1;
+    public float lookDistance = 9.3f;
     public GameObject slashPrefab;
     bool faceLeft = false;
 
@@ -38,7 +39,7 @@ public class Tiger : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if within attack distance
-            if(distance > attackDistance) {
+            if(distance < lookDistance) {
                 // Move towards the player
                 _renderer.flipX = faceLeft;
                 Vector2 angle_direction = (player.position - transform.position);
@@ -54,8 +55,11 @@ public class Tiger : MonoBehaviour
         while(true){
             yield return new WaitForSeconds(attackRate);
             float distance = Vector2.Distance(transform.position, player.position);
+                print("tiger "+distance);
+
             // Check if within attack distance
             if(distance <= attackDistance) {
+                print("nice");
                 _gameManager.TakeDamage(attackDamage);
                 
                 // Play slashing effect

@@ -10,8 +10,8 @@ public class Elephant : MonoBehaviour
     public float fireRate = 2f;
     public float gunDistance = 2f;
 
-    public float shootDistance = 5f;
-    public float lookDistance = 10000;
+    public float shootDistance = 8f;
+    public float lookDistance = 9.3f;
 
     public Transform gunPosition;
     public GameObject destructionEffect;
@@ -47,7 +47,7 @@ public class Elephant : MonoBehaviour
         while(true) {
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if elephant can see player
-            if(distance < lookDistance){
+            if(distance < shootDistance){
                 // Shoot at player
                 GameObject bulletInstance = Instantiate(bullet, gunPosition.position, gunPosition.rotation);   
                 Vector2 angle_direction = (player.position - bulletInstance.transform.position);
@@ -61,8 +61,9 @@ public class Elephant : MonoBehaviour
         while(true){
             yield return new WaitForSeconds(0.1f);
             float distance = Vector2.Distance(transform.position, player.position);
+            print(distance);
             // Check if within shooting distance
-            if(distance < lookDistance && distance > shootDistance){
+            if(distance < lookDistance){
                 // Move towards the player
                 _renderer.flipX = faceLeft;
                 Vector2 angle_direction = (player.position - transform.position);

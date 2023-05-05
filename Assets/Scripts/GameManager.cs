@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour
         health -= value;
         _audioSource.PlayOneShot(hurtPlayer);
         UpdateUI();
+        if (health < 0){
+            PublicVars.totalScore = score;
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void SceneChange(Scene current, Scene next) {
@@ -124,10 +128,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0){
-            PublicVars.totalScore = score;
-            SceneManager.LoadScene("GameOver");
-        }
 
     #if !UNITY_WEBGL
         // Esc to Exit

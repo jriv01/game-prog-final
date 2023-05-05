@@ -10,6 +10,8 @@ public class Raccoon : MonoBehaviour
     public float stealRate = 1f;
     public int stealMinimum = 1;
     public int stealMaximum = 3;
+    public float lookDistance = 9.3f;
+
     bool faceLeft = false;
     public GameObject stealPrefab;
 
@@ -40,7 +42,7 @@ public class Raccoon : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if within attack distance
-            if(distance > stealDistance) {
+            if(distance < lookDistance) {
                 // Move towards the player
                 _renderer.flipX = faceLeft;
                 Vector2 angle_direction = (player.position - transform.position);
