@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     }
     public void Heal(int value) {
         health += value;
+        PublicVars.totalHealth += value;
         _audioSource.PlayOneShot(healPlayer);
         UpdateUI();    
     }
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void AddMoney(int moneyNum) 
     {
+        PublicVars.totalCash += moneyNum;
         coinCount += moneyNum;
         totalCoinsCollected += moneyNum;
         UpdateUI();
@@ -123,6 +125,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (health <= 0){
+            PublicVars.totalScore = score;
             SceneManager.LoadScene("GameOver");
         }
 
