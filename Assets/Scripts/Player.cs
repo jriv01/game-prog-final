@@ -88,6 +88,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    IEnumerator waitsec(int time, int inital_speed){
+        yield return new WaitForSeconds(time);
+        speed = inital_speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("speedpickup")){
+            int original_speed = speed;
+            speed *= 2;
+            StartCoroutine(waitsec(3,original_speed));
+            Destroy(other.gameObject);
+        }
+    }
+
     public void SetWeapon(string weaponName) {
         foreach(Weapon weapon in weapons) {
             if(weapon.weaponName != weaponName) {

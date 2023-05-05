@@ -1489,6 +1489,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2885003140714674947, guid: 10b9b6edc82683844a4bea47c252212d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2885003140714674948, guid: 10b9b6edc82683844a4bea47c252212d, type: 3}
       propertyPath: m_Name
       value: miniMapCamera

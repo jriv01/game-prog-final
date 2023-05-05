@@ -23,6 +23,7 @@ TagManager:
   - Enemy
   - ammoUI
   - Boss
+  - speedpickup
   layers:
   - Default
   - TransparentFX
