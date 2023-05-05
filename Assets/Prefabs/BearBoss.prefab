@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 3417005635906006366}
   - component: {fileID: 3417005635906006367}
   - component: {fileID: 3417005635906006364}
+  - component: {fileID: 8161963968395786901}
   m_Layer: 3
   m_Name: BearBoss
   m_TagString: Untagged
@@ -185,22 +186,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3417005635906006365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860b5a7449a41054e9903942add62968, type: 3}
+  m_Script: {fileID: 11500000, guid: a0d96e616f453ab47ad7f4f4ef973f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 6
   maxHealth: 500
-  bulletSpeed: 1000
-  fireRate: 1
-  gunDistance: 3
-  attackDistance: 3
+  bulletSpeed: 100
+  fireRate: 2
+  gunDistance: 2
+  attackDistance: 5
   slashRate: 2
   healPosition: {fileID: 3417005637431418807}
   healEffect: {fileID: 5701597024263582388, guid: bec6431695ec1a1489df2111e5754c36, type: 3}
   slashEffect: {fileID: 8059254216250782026, guid: 062a37868a257964c905d1bbf827ffef, type: 3}
   gunBody: {fileID: 3417005635905643871}
   bulletSpawn: {fileID: 3417005637512559370}
-  destructionEffect: {fileID: 1465245868858389580, guid: 0d81da2656adf1a4f99ad2c657592b32, type: 3}
   bulletPrefab: {fileID: 3975552475631375013, guid: b700232713403af458735634888a93de, type: 3}
   hurtSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
 --- !u!60 &3417005635906006353
@@ -412,6 +412,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!195 &8161963968395786901
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417005635906006365}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 5.9350004
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 23.980001
+  m_BaseOffset: 11.990001
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3417005637431418804
 GameObject:
   m_ObjectHideFlags: 0
