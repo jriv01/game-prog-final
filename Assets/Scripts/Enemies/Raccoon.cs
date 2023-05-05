@@ -21,7 +21,7 @@ public class Raccoon : MonoBehaviour
     Rigidbody2D _rigidbody2D;
     Transform player;
     AudioSource _audioSource;
-
+    public AudioClip stealSound;
     SpriteRenderer _renderer;
     Animator _animator;
     NavMeshAgent agent;
@@ -69,7 +69,7 @@ public class Raccoon : MonoBehaviour
             if(distance <= stealDistance) {
                 int amount = Random.Range(stealMinimum, stealMaximum+1);
                 _gameManager.TakeMoney(amount);
-
+                _audioSource.PlayOneShot(stealSound);
                 // Play stealing effect
                 // Set position of effect
                 Vector3 slashPosition = new Vector3(
