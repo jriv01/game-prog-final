@@ -4455,8 +4455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c7e1034872d6847903330ca925c73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviorsToEnable:
-  - {fileID: 0}
+  behaviorsToEnable: []
   renderersToEnable: []
   activated: 0
   masks:
