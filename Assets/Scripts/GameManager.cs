@@ -53,12 +53,21 @@ public class GameManager : MonoBehaviour
         moneyUI = GameObject.FindGameObjectWithTag("moneyui").GetComponent<TextMeshProUGUI>();
         healthUI = GameObject.FindGameObjectWithTag("healthinterface").GetComponent<TextMeshProUGUI>();
         scoreUI = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
+        ammoUI = GameObject.FindGameObjectWithTag("ammoUI").GetComponent<TextMeshProUGUI>();
+        scoreUI = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
+
         UpdateUI();
     }
     public void addAmmo(int value)
     {
         ammoCount += value;
         UpdateUI();
+    }
+
+    public void incrementEnemyScoreCounter(int value) {
+        score += value;
+        PublicVars.totalScore += value;
+        scoreUI.text = "Score: " + score;
     }
     public void Heal(int value) {
         health += value;
@@ -84,6 +93,8 @@ public class GameManager : MonoBehaviour
         purchaseButton = GameObject.FindGameObjectWithTag("PurchaseButton");
         costUI = GameObject.FindGameObjectWithTag("CostUI").GetComponent<TextMeshProUGUI>();
         GameObject.FindGameObjectWithTag("ShopUI").SetActive(false);
+        ammoUI = GameObject.FindGameObjectWithTag("ammoUI").GetComponent<TextMeshProUGUI>();
+        scoreUI = GameObject.FindGameObjectWithTag("scoreui").GetComponent<TextMeshProUGUI>();
         purchaseButton.SetActive(false);
         costUI.enabled = false;
         UpdateUI();
@@ -93,6 +104,7 @@ public class GameManager : MonoBehaviour
         moneyUI.text = "CASH: " + coinCount;
         healthUI.text = "HEALTH: " + health;
         ammoUI.text = "Ammo: " + ammoCount;
+        scoreUI.text = "Score: " + score;
     }
 
     public void ResetCoins(){

@@ -14,9 +14,11 @@ public class Enemy : MonoBehaviour
     public GameObject heartPrefab;
     public GameObject ammoPrefab;
     AudioSource _audioSource;
+    GameManager _gameManager;
 
     void Start() {
         _audioSource = GetComponent<AudioSource>();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     public void TakeDamage(int damage) {
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
         hp -= damage;
         if(hp <= 0) {
             StartCoroutine(Die());
+            _gameManager.incrementEnemyScoreCounter(10);
         } else {
             _audioSource.PlayOneShot(damageSound);
             StartCoroutine(FlashRed());

@@ -46,6 +46,7 @@ public class Bear : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
     }
 
     IEnumerator LateStart() {
@@ -185,6 +186,7 @@ public class Bear : MonoBehaviour
     public void TakeDamage(int damage) {
         // Lose hp & check if the enemy died
         health -= damage;
+        _gameManager.incrementEnemyScoreCounter(damage);
         if(health <= 0) {
             SceneManager.LoadScene("VictoryScene");
         } else {
