@@ -57,7 +57,7 @@ public class Bear : MonoBehaviour
 
         health = maxHealth;
 
-        StartCoroutine(Follow());
+        ChangeState();
     }
 
     void ChangeState() {
@@ -175,9 +175,24 @@ public class Bear : MonoBehaviour
 
         // Update animation
         _animator.SetBool("Moving", _rigidbody2D.velocity != new Vector2(0, 0));
+    }
 
+
+    public void TakeDamage(int damage) {
+        // Lose hp & check if the enemy died
+        health -= damage;
         if(health <= 0) {
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("VictoryScene");
+        } else {
+            StartCoroutine(FlashRed());
         }
+    }
+
+    IEnumerator FlashRed() {
+        // Flash sprite red for half a second
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.color = new Color32(255, 0, 0, 255);
+        yield return new WaitForSeconds(0.5f);
+        renderer.color = new Color32(255, 255, 255, 255);
     }
 }
