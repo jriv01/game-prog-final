@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int coinCount = 0;
     public int totalCoinsCollected = 0;
     public int health = 20;
+    public int initialhealth = 20;
     public int score = 0;
     public int ammoCount = 20;
     private bool grenadeUnlocked = false;
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         UpdateUI();
         if (health < 0){
             PublicVars.totalScore = score;
+            health = initialhealth;
             SceneManager.LoadScene("GameOver");
         }
     }
