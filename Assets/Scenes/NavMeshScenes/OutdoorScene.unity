@@ -7128,6 +7128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 935841656423879144, guid: 9ef7c02050d1c9c46a046e86781ba35a, type: 3}
+      propertyPath: lookDistance
+      value: 9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 935841656423879144, guid: 9ef7c02050d1c9c46a046e86781ba35a, type: 3}
+      propertyPath: shootDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 935841656423879147, guid: 9ef7c02050d1c9c46a046e86781ba35a, type: 3}
       propertyPath: m_RootOrder
       value: 1
