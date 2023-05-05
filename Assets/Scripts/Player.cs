@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     public AudioClip pistolSound;
     public AudioClip shotgunSound;
+
+    public AudioClip speedSound;
     
     bool faceLeft = false;
     Animator _animator;
@@ -102,6 +104,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("speedpickup")){
             int original_speed = speed;
             speed *= 2;
+            _audioSource.PlayOneShot(speedSound);
             StartCoroutine(waitsec(3,original_speed));
             Destroy(other.gameObject);
         }

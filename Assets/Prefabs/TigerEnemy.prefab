@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   deathSound: {fileID: 8300000, guid: 688f0b79d3ac4c94ab56f1a00d624cb1, type: 3}
-  damageSound: {fileID: 8300000, guid: 29a9012a60270bc43bd76f25f251f9d5, type: 3}
+  damageSound: {fileID: 8300000, guid: 30ce8c5ee3f64594599810fa820bd98c, type: 3}
   deathEffectPrefab: {fileID: 1465245868858389580, guid: 0d81da2656adf1a4f99ad2c657592b32, type: 3}
   moneyPrefab: {fileID: 5756640002272353731, guid: 953373c512dbea0498e03008a4726a75, type: 3}
 --- !u!60 &1103029709884594258
