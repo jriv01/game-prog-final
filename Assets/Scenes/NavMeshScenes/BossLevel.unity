@@ -1079,7 +1079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3417005635906006352, guid: 9bc64c42c0c8a3f4ab4191c92169d2df, type: 3}
       propertyPath: maxHealth
-      value: 500
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 3417005635906006352, guid: 9bc64c42c0c8a3f4ab4191c92169d2df, type: 3}
       propertyPath: bulletSpeed
@@ -1276,6 +1276,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
+--- !u!1 &552929862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552929863}
+  - component: {fileID: 552929864}
+  m_Layer: 0
+  m_Name: HeartSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552929863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552929862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.17, y: -0.24, z: 0.16594219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 55
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552929864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552929862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349b8a88638af0a43bd7244604cbf2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPrefab: {fileID: 4867922536260296505, guid: b80cbd7cd51cfa448b33a43a76ef9fb2, type: 3}
 --- !u!1 &580358320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1615,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 935841656423879149, guid: 9ef7c02050d1c9c46a046e86781ba35a, type: 3}
     spawnPoint: {fileID: 994150469}
     weight: 1
+  currentLevel: notboss
   waveDelay: 10
   spawnDelay: 1
   initialWaveCount: 1
@@ -2608,6 +2654,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 935841656423879149, guid: 9ef7c02050d1c9c46a046e86781ba35a, type: 3}
     spawnPoint: {fileID: 1116570667}
     weight: 1
+  currentLevel: notboss
   waveDelay: 20
   spawnDelay: 1
   initialWaveCount: 2

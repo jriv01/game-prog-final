@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NavMeshScenes/FloorOne.unity
     guid: 782e84546ada63f40a51632caeb17bcb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OldLevels/BossLevelIOld.unity
     guid: 45ad2a64c0e05524691109f2c179959a
   - enabled: 1
@@ -22,13 +22,16 @@ EditorBuildSettings:
     guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
-    guid: e4834b265fa6dec4d944e082bd4e0a78
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
-    guid: 746c8ebd14de23244927fba571366499
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 42f7246cb27bf5343a9115cc76e3ad6f
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 22935f5d9de443d478783e2dd69a6d61

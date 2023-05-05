@@ -5,11 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int hp = 3;
+    public string currentLevel = "notboss";
     
     public AudioClip deathSound;
     public AudioClip damageSound;
     public GameObject deathEffectPrefab;
     public GameObject moneyPrefab;
+    public GameObject heartPrefab;
     public GameObject ammoPrefab;
     AudioSource _audioSource;
 
@@ -48,8 +50,14 @@ public class Enemy : MonoBehaviour
 
         // Play death components
         Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        if(currentLevel == "boss") {
+            Instantiate(heartPrefab, transform.position, Quaternion.identity);
+            Instantiate(ammoPrefab, transform.position, Quaternion.identity);
+        }
+        else{
         Instantiate(moneyPrefab, transform.position, Quaternion.identity);
         Instantiate(ammoPrefab, transform.position, Quaternion.identity);
+        }
         _audioSource.PlayOneShot(deathSound);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);

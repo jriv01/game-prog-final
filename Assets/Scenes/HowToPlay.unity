@@ -2348,7 +2348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bd3f1d178cd0a41a27b7bf54a667fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: FloorOne
+  levelToLoad: StartScene
 --- !u!4 &575687187
 Transform:
   m_ObjectHideFlags: 0
@@ -3009,6 +3009,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d92eb833850c410479e157a0cf7a7359, type: 3}
+--- !u!1001 &717654430
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6463476673859022986, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_Name
+      value: miniMapCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463476673859022991, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b54e0022f93e45543a0200112e53d6f8, type: 3}
 --- !u!1 &718362977
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,12 +5919,8 @@ MonoBehaviour:
     advantage when you enter the levels in the top right
 
 
-    - Use your knife if
-    you don''t have any ammo left!
-
-
-    - Have fun and explore! You never know what
-    lurks around...
+    - Have fun and explore!
+    You never know what lurks around...
 
 '
   m_isRightToLeft: 0

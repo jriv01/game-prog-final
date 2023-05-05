@@ -90,7 +90,7 @@ public class Bear : MonoBehaviour
         int followTime = 10;
         float nextSlash = 0;
         while(time < followTime){
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);  
             float distance = Vector2.Distance(transform.position, player.position);
             // Check if within shooting distance
             if(distance > attackDistance){

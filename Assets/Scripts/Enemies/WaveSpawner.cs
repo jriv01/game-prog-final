@@ -6,6 +6,7 @@ public class WaveSpawner : MonoBehaviour
 {
     // A list of all the possible spawns
     public SpawnType[] spawns;
+    public string currentLevel = "notboss";
 
     // Time between each wave
     public int waveDelay;
