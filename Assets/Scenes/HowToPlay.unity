@@ -5777,27 +5777,31 @@ MonoBehaviour:
 
 
     -
-    Beware of bear traps!
+    Beware of sharp spike traps!
 
 
-    - Beware of different enemies: some will use ranged
-    attacks, some will melee, some have special effects!
+    - Beware of different enemies: some will use
+    ranged attacks, some will melee, some have special effects!
 
 
-    - Fight enemies and
-    swap weapons, but keep track of your ammo
+    - Fight enemies
+    and swap weapons, but keep track of your ammo
 
 
-    - Spend your money wisely to
-    open doors and buy boosts from the shop
+    - Spend your money wisely
+    to open doors and buy boosts from the shop
 
 
-    - Utilize the minimap to your advantage
-    when you enter the levels in the top right
+    - Utilize the minimap to your
+    advantage when you enter the levels in the top right
 
 
-    - Have fun and explore! You
-    never know what lurks around...
+    - Use your knife if
+    you don''t have any ammo left!
+
+
+    - Have fun and explore! You never know what
+    lurks around...
 
 '
   m_isRightToLeft: 0
