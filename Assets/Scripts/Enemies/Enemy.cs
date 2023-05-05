@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public AudioClip damageSound;
     public GameObject deathEffectPrefab;
     public GameObject moneyPrefab;
+    //public GameObject ammoPrefab;
     AudioSource _audioSource;
 
     void Start() {
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
         // Play death components
         Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
         Instantiate(moneyPrefab, transform.position, Quaternion.identity);
+        //Instantiate(ammoPrefab, transform.position, Quaternion.identity);
         _audioSource.PlayOneShot(deathSound);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
