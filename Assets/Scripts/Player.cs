@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("speedpickup")){
             int original_speed = speed;
             speed *= 2;
-            StartCoroutine(waitsec(4,original_speed));
+            StartCoroutine(waitsec(3,original_speed));
             Destroy(other.gameObject);
         }
     }
