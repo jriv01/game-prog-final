@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 5
-  pickupSound: {fileID: 8300000, guid: db61b86c533f3a846900711aa754b9bc, type: 3}
+  pickupSound: {fileID: 8300000, guid: 17fc88ab89cd3864cb761b59695a9590, type: 3}

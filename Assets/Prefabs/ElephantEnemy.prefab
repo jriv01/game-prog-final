@@ -217,6 +217,7 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: 64d960b996ec74842bbb0f4d0c13bea9, type: 3}
   deathEffectPrefab: {fileID: 1622559734526033383, guid: 130b1026c0fc81641b6da64898f9182f, type: 3}
   moneyPrefab: {fileID: 5756640002272353731, guid: 953373c512dbea0498e03008a4726a75, type: 3}
+  ammoPrefab: {fileID: 8574130965648667377, guid: 75f109c4f0280e24e91a7f3844fa6f1c, type: 3}
 --- !u!60 &935841656423879145
 PolygonCollider2D:
   m_ObjectHideFlags: 0

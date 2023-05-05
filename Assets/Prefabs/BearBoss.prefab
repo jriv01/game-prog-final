@@ -202,7 +202,7 @@ MonoBehaviour:
   gunBody: {fileID: 3417005635905643871}
   bulletSpawn: {fileID: 3417005637512559370}
   bulletPrefab: {fileID: 3975552475631375013, guid: b700232713403af458735634888a93de, type: 3}
-  hurtSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
+  hurtSound: {fileID: 8300000, guid: 7f6ad4698a20bf0439ebbc23f6e3bcd1, type: 3}
 --- !u!60 &3417005635906006353
 PolygonCollider2D:
   m_ObjectHideFlags: 0

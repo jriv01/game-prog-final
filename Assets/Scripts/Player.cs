@@ -103,7 +103,12 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("speedpickup")){
             int original_speed = speed;
-            speed *= 2;
+            if (speed <= 30){
+                speed *= 2;
+            }
+            else{
+                speed *= 1;
+            }
             _audioSource.PlayOneShot(speedSound);
             StartCoroutine(waitsec(3,original_speed));
             Destroy(other.gameObject);

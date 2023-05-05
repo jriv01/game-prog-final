@@ -11,7 +11,7 @@ public class AmmoPickup : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player")){
-            gameManager.addAmmo(30);
+            gameManager.addAmmo(20);
             gameManager._audioSource.PlayOneShot(pickupSound);
             Destroy(gameObject);
         }
