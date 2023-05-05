@@ -10,10 +10,9 @@ public class GameOverTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager _gameManager = FindObjectOfType<GameManager>();
-
-        string cashCollected = "Total Cash Collected: " + _gameManager.totalCoinsCollected;
-        string finalScore = "Final Score: " + _gameManager.score;
+        
+        string cashCollected = "Total Cash Collected: " + PublicVars.totalCash;
+        string finalScore = "Final Score: " + PublicVars.totalScore;
 
         finalCash.text = cashCollected + "\n\n" + finalScore;
     }

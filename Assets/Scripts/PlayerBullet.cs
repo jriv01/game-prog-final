@@ -14,6 +14,9 @@ public class PlayerBullet : MonoBehaviour
         if(other.CompareTag("Enemy")) {
             other.GetComponent<Enemy>().TakeDamage(damage);
         }
+        if(other.CompareTag("Boss")) {
+            other.GetComponent<Bear>().TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }
