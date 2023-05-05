@@ -21,6 +21,8 @@ public class Elephant : MonoBehaviour
 
     public AudioClip hurtSound;
 
+    public AudioClip shootSound;
+
     bool faceLeft = false;
 
     GameManager _gameManager;
@@ -61,6 +63,7 @@ public class Elephant : MonoBehaviour
                 GameObject bulletInstance = Instantiate(bullet, gunPosition.position, gunPosition.rotation);   
                 Vector2 angle_direction = (player.position - bulletInstance.transform.position);
                 bulletInstance.GetComponent<Rigidbody2D>().AddForce(angle_direction.normalized * (bulletSpeed));
+                _audioSource.PlayOneShot(shootSound);
             }
             yield return new WaitForSeconds(fireRate);
         }

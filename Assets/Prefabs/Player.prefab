@@ -301,6 +301,8 @@ MonoBehaviour:
     distanceFromPlayer: 1.25
   _audioSource: {fileID: 1775717014797023584}
   foundWeapons: []
+  pistolSound: {fileID: 8300000, guid: 49078c95f5bb10342bd5830779380bf5, type: 3}
+  shotgunSound: {fileID: 8300000, guid: f18c4185890bbd94fbd6fd56e6a9737e, type: 3}
 --- !u!50 &1775717014797023519
 Rigidbody2D:
   serializedVersion: 4

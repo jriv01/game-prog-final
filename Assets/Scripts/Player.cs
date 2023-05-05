@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public AudioSource _audioSource;
     public List<string> foundWeapons = new List<string>();
     float nextFire = 0;
+
+    public AudioClip pistolSound;
+    public AudioClip shotgunSound;
     
     bool faceLeft = false;
     Animator _animator;
@@ -76,6 +79,7 @@ public class Player : MonoBehaviour
     void FireGun(Transform weaponPosition, float angle) {
         GameObject bulClone = Instantiate(currentWeapon.bulletPrefab, currentWeapon.bulletSpawn.position, weaponPosition.rotation);
         bulClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * currentWeapon.bulletSpeed);
+        _audioSource.PlayOneShot(pistolSound);
     }
 
     void FireShotgun(Transform weaponPosition, float angle) {
@@ -86,6 +90,7 @@ public class Player : MonoBehaviour
             GameObject bulClone = Instantiate(currentWeapon.bulletPrefab, currentWeapon.bulletSpawn.position, weaponPosition.rotation);
             bulClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(currAngle), Mathf.Sin(currAngle)) * currentWeapon.bulletSpeed);
         }
+        _audioSource.PlayOneShot(shotgunSound);
     }
 
     IEnumerator waitsec(int time, int inital_speed){

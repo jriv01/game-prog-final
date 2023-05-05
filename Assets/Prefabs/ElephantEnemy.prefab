@@ -199,6 +199,7 @@ MonoBehaviour:
   destructionEffect: {fileID: 1622559734526033383, guid: 130b1026c0fc81641b6da64898f9182f, type: 3}
   bullet: {fileID: 8633311355631410040, guid: 74bd8b7fd01ef10449b1f13cd94db2cf, type: 3}
   hurtSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
+  shootSound: {fileID: 8300000, guid: 49078c95f5bb10342bd5830779380bf5, type: 3}
 --- !u!114 &935841656423879140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,8 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  deathSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
-  damageSound: {fileID: 8300000, guid: 475f8d10fc02a564587f938a78428f1d, type: 3}
+  deathSound: {fileID: 8300000, guid: af836922236c89144ae603a321723648, type: 3}
+  damageSound: {fileID: 8300000, guid: 64d960b996ec74842bbb0f4d0c13bea9, type: 3}
   deathEffectPrefab: {fileID: 1622559734526033383, guid: 130b1026c0fc81641b6da64898f9182f, type: 3}
   moneyPrefab: {fileID: 5756640002272353731, guid: 953373c512dbea0498e03008a4726a75, type: 3}
 --- !u!60 &935841656423879145
